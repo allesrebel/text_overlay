@@ -9,7 +9,7 @@ python -m pip install  -r requirements.txt
 
 # Usage
 ```
-python3 text_overlay_util.py < header > < footer > <font_path>
+python3 text_overlay_util.py < header > < footer > <font_path> <font_size>
 ```
 input stream contains formatted image data, what Pillow supports
 ouput stream will be image data, png
@@ -21,7 +21,7 @@ echo "123456" | \
 xargs -I % bash -c \
 'echo % | \
 qr --error-correction=H "{\"name\":\"Payload_%\",\"transport\":\"softap\"}" | \
-python text_overlay_util.py "%" "footer" "Roboto/Roboto-Black.ttf" \
+python text_overlay_util.py "%" "footer" "Roboto/Roboto-Black.ttf" 45 \
 > %.png'
 ```
 
@@ -31,7 +31,7 @@ echo "123456" | \
 xargs -I % bash -c \
 'echo % | \
 qr --error-correction=H "{\"name\":\"Payload_%\",\"transport\":\"softap\"}" | \
-python3 text_overlay_util.py "%" "footer" "Roboto/Roboto-Black.ttf" \
+python3 text_overlay_util.py "%" "footer" "Roboto/Roboto-Black.ttf" 45 \
 > %.png'
 ```
 
